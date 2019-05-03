@@ -1,4 +1,4 @@
-package com.example.indoorapp;
+package com.example.testapp;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
