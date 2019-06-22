@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0"
+    package="com.here.android.example.venue">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="REWEL's  Routing">
+
+        <!--Developers should put application credentials here.To obtain them, please register the application
+         at https://developer.here.com/develop/mobile-sdks-->
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="F26CEV4TTW7cOQyDfwqR" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="LCoe1udtRgqkeo3IKJcYww" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="ScMuCh5FLO3bmrRn6RpCnbqFQwJBtPUAKfwu+nIjjwd+9RBm5ihGxo7mKr/+iZcCSH2AdgSW1QCuoZVrudG9Q1pct/gc7t3zonidLrAsJYgWKBExd+ck3MYmG5aEw3YK4f5exNUs3E7MA1SN35vEWIiNiOMVMP4bKMCFhfhH/qgRMXHCt1oTKyiTFbb24EtuvxhhvXYUInfBgpCP+KJNlfY3eedoAOux+s6N3bGX8RviQ5XAW3y+evmlNZnJLdjRmAO8wrTeQykGdIky3ermfWMXSPTDi8B/UIZVYNnsCaHaZ1WUpLYsm3pvm9TyI4aZ3AY5aQFGJ76Cg9pfrkO5dDllmVRm3j/nYk6K2pKIsPPVbToBBZkoJSth0Rki+fZnSCHrHtopdhboLIKMlQnAbRRgcA+jkbttItQngs7t3Z7+ZBtvU2VopvP24IfPfuawEJOSwVoAqqkddXpc82js3zMlUy9Udhg/rAjigABdGlIl5Kl2obvcl/e1Sf9qgFvsU3bD7/7A3tSyXWYrrH60A4sSeAbp1aIpdDylYrO7jqDHW1oxa3/5e0kC4iX/MPuABqRO08Bs3F5lFhhk3fjsIURYrJI5jKlk7TDZ+05joPItXAB7aDUgAo6kuOLA+rK31wO68At4O9XVvOBPei8wq5tVqCXSnG1d9bB+61jgFlM=" />
+
+        <activity
+            android:label="REWEL's Routing"
+            android:name=".Venue3dActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--Developers should always provide custom values for each of {YOUR_LABEL_NAME} and {YOUR_INTENT_NAME}.
+         Do not reuse HERE SDK defaults.-->
+        <meta-data
+            android:name="INTENT_NAME"
+            android:value="intentrouting" />
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:label="labelrouting"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="intentrouting"></action>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
